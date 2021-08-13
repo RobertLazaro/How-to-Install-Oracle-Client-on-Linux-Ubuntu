@@ -1,0 +1,26 @@
+--------------INSTALACION ORACLE CLIENT ----------------------
+
+---PASO 1---
+Descargar el Basic Package (RPM) - oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm de la siguiente URL:
+https://download.oracle.com/otn_software/linux/instantclient/211000/oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
+Descargar el SQL*Plus Package (RPM) -  oracle-instantclient-sqlplus-21.1.0.0.0-1.x86_64.rpm de la siguiente URL:
+https://download.oracle.com/otn_software/linux/instantclient/211000/oracle-instantclient-sqlplus-21.1.0.0.0-1.x86_64.rpm
+
+---PASO 2---
+Ejecutar el comando:
+sudo apt install alien libaio1
+
+---PASO 3---
+Entrar al directorio de descargas y ejecutar los comandos en el orden en que estan:
+1. sudo alien -i oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
+2. sudo alien -i oracle-instantclient-sqlplus-21.1.0.0.0-1.x86_64.rpm
+
+---PASO 4---
+Ejecutar los comandos en el orden en que estan:
+1. sudo sh -c 'echo /usr/lib/oracle/21/client64/lib/ > /etc/ld.so.conf.d/oracle.conf'
+2. sudo ldconfig
+
+---PASO 5---
+Ejecutar el comando:
+sqlplus
+Si sale el inicio de sesion del sqlplus la instalacion fue exitosa, de lo contrario hubo un error.
