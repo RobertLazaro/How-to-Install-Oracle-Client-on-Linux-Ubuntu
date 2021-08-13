@@ -1,0 +1,59 @@
+	Instalación de Open JDK 8 en sistemas Debian o Ubuntu
+	
+Configure su sistema operativo para utilizar la última versión de un Kit de compatibilidad 
+de tecnología (TCK) Certificado OpenJDK versión 8, como OpenJDK 8 ( 1.8.0_151 mínimo). 
+Java 9 y posteriores no son compatibles.
+
+Nota: Después de instalar el JDK, es posible que deba configurar JAVA_HOME en su perfil:
+•	Para shell o bash: export JAVA_HOME=path_to_java_home
+•	Para csh (shell C): setenv JAVA_HOME=path_to_java_home
+
+Estas instrucciones le muestran cómo instalar OpenJDK. DataStax ha probado OpenJDK a escala.
+
+1.	Compruebe qué versión del JDK está utilizando su sistema:
+
+java -version
+
+Si se utiliza OpenJDK, los resultados deberían verse así:
+
+openjdk version "1.8.0_242"
+OpenJDK Runtime Environment (build 1.8.0_242-b09)
+OpenJDK 64-Bit Server VM (build 25.242-b09, mixed mode)
+
+Si se utiliza Oracle Java, los resultados deberían verse así:
+
+java version "1.8.0_241"
+Java(TM) SE Runtime Environment (build 1.8.0_241-b07)
+Java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
+
+2.	Actualice los repositorios:
+
+sudo apt-get update
+
+3.	Instale OpenJDK:
+
+sudo apt-get install openjdk-8-jdk
+
+Se instala el último JDK.
+4.	Verifique la versión del JDK:
+
+java -version
+
+openjdk version "1.8.0_242"
+OpenJDK Runtime Environment (build 1.8.0_242-b09)
+OpenJDK 64-Bit Server VM (build 25.242-b09, mixed mode)
+
+5.	Si no se está utilizando la versión correcta de Java, use el comando alternativas para 
+cambiarla:
+
+sudo update-alternativas - establecer java /usr/lib/jvm/jdk1.8.0_ versión / bin / java
+
+6.	Verifique la versión del JDK:
+
+java -version
+
+openjdk version "1.8.0_242"
+OpenJDK Runtime Environment (build 1.8.0_242-b09)
+OpenJDK 64-Bit Server VM (build 25.242-b09, mixed mode)
+
+¡¡¡Felicidades Java 8 ha sido instalado correctamente!!!
